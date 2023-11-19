@@ -5,10 +5,10 @@ const initialState = [
   { id: "2", title: "Slices..", content: "dla dla dla" },
 ];
 
-const postSlice = createSlice({
+export const PostSlice = createSlice({
   name: "posts",
-  initialState,
+  initialState: { value: initialState },
   reducers: {},
 });
 
-export default postSlice.reducer;
+export const postReducer = PostSlice.reducer;

@@ -1,10 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import postreducer from "../features/posts/postSlice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { postReducer } from "../features/posts/PostSlice"
 
-const reduxStore = configureStore({
-  reducer: {
-    posts: postreducer,
-  },
+const rootReducers = combineReducers({
+  postReducer
 });
 
-export default reduxStore;
+export const setupStore = () => {
+  return configureStore({
+      reducer: rootReducers
+  });
+}
